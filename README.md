@@ -32,52 +32,51 @@
 int main()
 {
     int date, day, month;
-
     printf("Введите дату в формате ddmm: ");
     scanf("%d", &date);
-
     day = date / 100;
     month = date % 100;
-
-    if ((month == 3 && day >= 21) || (month == 4 && day <= 19))
-        printf("Знак Зодиака: Овен\n");
-
-    else if ((month == 4 && day >= 20) || (month == 5 && day <= 20))
-        printf("Знак Зодиака: Телец\n");
-
-    else if ((month == 5 && day >= 21) || (month == 6 && day <= 20))
-        printf("Знак Зодиака: Близнецы\n");
-
-    else if ((month == 6 && day >= 21) || (month == 7 && day <= 22))
-        printf("Знак Зодиака: Рак\n");
-
-    else if ((month == 7 && day >= 23) || (month == 8 && day <= 22))
-        printf("Знак Зодиака: Лев\n");
-
-    else if ((month == 8 && day >= 23) || (month == 9 && day <= 22))
-        printf("Знак Зодиака: Дева\n");
-
-    else if ((month == 9 && day >= 23) || (month == 10 && day <= 22))
-        printf("Знак Зодиака: Весы\n");
-
-    else if ((month == 10 && day >= 23) || (month == 11 && day <= 21))
-        printf("Знак Зодиака: Скорпион\n");
-
-    else if ((month == 11 && day >= 22) || (month == 12 && day <= 21))
-        printf("Знак Зодиака: Стрелец\n");
-
-    else if ((month == 12 && day >= 22) || (month == 1 && day <= 19))
-        printf("Знак Зодиака: Козерог\n");
-
-    else if ((month == 1 && day >= 20) || (month == 2 && day <= 18))
-        printf("Знак Зодиака: Водолей\n");
-
-    else if ((month == 2 && day >= 19) || (month == 3 && day <= 20))
-        printf("Знак Зодиака: Рыбы\n");
-
-    else
-        printf("Некорректная дата\n");
-
+    switch (month)
+    {
+        case 1:
+            printf("Знак Зодиака: %s\n", day < 20 ? "Козерог" : "Водолей");
+            break;
+        case 2:
+            printf("Знак Зодиака: %s\n", day < 19 ? "Водолей" : "Рыбы");
+            break;
+        case 3:
+            printf("Знак Зодиака: %s\n", day < 21 ? "Рыбы" : "Овен");
+            break;
+        case 4:
+            printf("Знак Зодиака: %s\n", day < 20 ? "Овен" : "Телец");
+            break;
+        case 5:
+            printf("Знак Зодиака: %s\n", day < 21 ? "Телец" : "Близнецы");
+            break;
+        case 6:
+            printf("Знак Зодиака: %s\n", day < 21 ? "Близнецы" : "Рак");
+            break;
+        case 7:
+            printf("Знак Зодиака: %s\n", day < 23 ? "Рак" : "Лев");
+            break;
+        case 8:
+            printf("Знак Зодиака: %s\n", day < 23 ? "Лев" : "Дева");
+            break;
+        case 9:
+            printf("Знак Зодиака: %s\n", day < 23 ? "Дева" : "Весы");
+            break;
+        case 10:
+            printf("Знак Зодиака: %s\n", day < 23 ? "Весы" : "Скорпион");
+            break;
+        case 11:
+            printf("Знак Зодиака: %s\n", day < 22 ? "Скорпион" : "Стрелец");
+            break;
+        case 12:
+            printf("Знак Зодиака: %s\n", day < 22 ? "Стрелец" : "Козерог");
+            break;
+        default:
+            printf("Некорректный месяц\n");
+    }
     return 0;
 }
 ```
